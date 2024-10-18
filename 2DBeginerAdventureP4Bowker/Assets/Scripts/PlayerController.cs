@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector2 position = transform.position;
+        position.x = position.x + 0.1f;
+        transform.position = position;
+        // delete later but video is at 5:48
     }
 }
