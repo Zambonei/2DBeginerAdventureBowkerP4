@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Rigidbody2D rigidbody2d;
+        //video is at 13:40
     }
 
     // Update is called once per frame
