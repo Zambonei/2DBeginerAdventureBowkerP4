@@ -6,8 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 3.0f;
-    public float timeInvincible = 2;
+
     public int maxHealth = 5;
+    public float timeInvincible = 2;
     public int health { get { return currentHealth; } }
     int currentHealth;
 
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
        rigidbody2d = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+       currentHealth = maxHealth;
         
     }
 
@@ -33,11 +34,11 @@ public class PlayerController : MonoBehaviour
 
         if (isInvincible)
         {
-            invincibleTimer = Time.deltaTime;
-            if(invincibleTimer > 0 )
+            invincibleTimer -= Time.deltaTime; 
+            if(invincibleTimer < 0 )
             {
                 isInvincible = false;
-                //video at 10:28 damage zones and enemies
+                
             }
         }
 
@@ -53,6 +54,15 @@ public class PlayerController : MonoBehaviour
     }
     public void ChangeHealth(int amount)
     {
+        if(amount < 0)
+        {
+            if(isInvincible)
+            {
+                return;
+            }
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+        }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
     }
