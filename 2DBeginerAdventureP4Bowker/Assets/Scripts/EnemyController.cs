@@ -38,14 +38,14 @@ public class EnemyController : MonoBehaviour
         Vector2 position = rigidbody2d.position;
         if(vertical)
         {
-            animator.SetFloat("MoveX", 0);
-            animator.SetFloat("MoveY", direction);
+            animator.SetFloat("Move X", 0);
+            animator.SetFloat("Move Y", direction);
             position.y = position.y + Time.deltaTime * speed * direction;
         }
         else
         {
-            animator.SetFloat("MoveX", direction);
-            animator.SetFloat("MoveY", 0);
+            animator.SetFloat("Move X", direction);
+            animator.SetFloat("Move Y", 0);
             position.x = position.x + Time.deltaTime * speed * direction;
         }
         

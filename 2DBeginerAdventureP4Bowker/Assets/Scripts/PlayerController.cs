@@ -43,9 +43,9 @@ public class PlayerController : MonoBehaviour
             lookDirection.Set(move.x, move.y);
             lookDirection.Normalize();
         }
-        animator.SetFloat("look X", lookDirection.x);
-        animator.SetFloat("look Y", lookDirection.y);
-        animator.SetFloat("speed", move.magnitude);
+        animator.SetFloat("Look X", lookDirection.x);
+        animator.SetFloat("Look Y", lookDirection.y);
+        animator.SetFloat("Speed", move.magnitude);
 
         if (isInvincible)
         {
