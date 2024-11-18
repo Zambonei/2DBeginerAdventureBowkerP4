@@ -22,7 +22,7 @@ public class Projectiles : MonoBehaviour
         }
     }
     //if launch doesnt work try shoot
-    //video world interactions at 8:03
+  
     public void Launch(Vector2 direction, float force)
     {
         rigidbody2D.AddForce(direction * force);
